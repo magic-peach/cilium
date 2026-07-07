@@ -19,6 +19,7 @@ runs:
         echo "CONN_DISRUPT_EXTRA_ARG=" >> $GITHUB_ENV
         echo "CONN_DISRUPT_EXTRA_TEST=" >> $GITHUB_ENV
         echo "BGP_CONTROL_PLANE_HELM_VALUES=--helm-set=bgpControlPlane.enabled=true" >> $GITHUB_ENV
+        echo "CILIUM_GINKGO_EXTRA_ARGS=-cilium.install-helm-overrides='imagePullSecrets[0].name=regcred'" >> $GITHUB_ENV
         echo "CILIUM_CLI_RELEASE_REPO=cilium/cilium-cli" >> $GITHUB_ENV
         CILIUM_CLI_VERSION=""
         echo "CILIUM_CLI_VERSION=$CILIUM_CLI_VERSION" >> $GITHUB_ENV
